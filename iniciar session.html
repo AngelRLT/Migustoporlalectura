@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión / Registrarse - Mi Gusto por la Lectura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Gusto por la Lectura</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#" onclick="toggleForm('loginForm')">Iniciar Sesión</a></li>
+                <li><a href="#" onclick="toggleForm('registerForm')">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="loginForm" class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required><br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required><br>
+                <button type="submit" class="button blue">Iniciar Sesión</button>
+            </form>
+        </section>
+        
+        <section id="registerForm" class="form-container" style="display: none;">
+            <h2>Registrarse</h2>
+            <form>
+                <label for="newUsername">Usuario:</label>
+                <input type="text" id="newUsername" name="newUsername" required><br>
+                <label for="newPassword">Contraseña:</label>
+                <input type="password" id="newPassword" name="newPassword" required><br>
+                <button type="submit" class="button green">Registrarse</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Mi Gusto por la Lectura. Todos los derechos reservados.</p>
+        <p>Creado por Karol Joseph Vazquez Hernandez</p>
+    </footer>
+
+    <script>
+        function toggleForm(formId) {
+            var forms = document.querySelectorAll('.form-container');
+            forms.forEach(function(form) {
+                if (form.id === formId) {
+                    form.style.display = 'block';
+                } else {
+                    form.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
